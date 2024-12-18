@@ -56,7 +56,16 @@ public:
 
 
 	}
+	string* copyArray()
+	{
+		string* copia = new string[capacity];
 
+		int i;
+		for (i = 0; i < size; i++) {
+			copia[i] = array[i];
+		}
+		return copia;
+	 }
 	bool remove(int position) {
 		if (position >= size || position < 0) {
 			cout << "Posicio inexistent";
@@ -84,7 +93,14 @@ public:
 
 	void Inversion()
 	{
-		string* aux;
+		//Copiar todo el array
+		string* copia = copyArray();
+
+		for (int i = 0; i < size; i++)
+		{
+			int j = size;
+			array[i] = copia[j];
+		}
 		
 	}
 
